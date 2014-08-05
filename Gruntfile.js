@@ -355,10 +355,16 @@ module.exports = function (grunt) {
         configFile: 'test/karma.conf.js',
         singleRun: true
       }
+    },
+
+    shell: {
+      firebase_deploy: {
+        command: 'firebase deploy'
+      }
     }
   });
 
-
+  grunt.loadNpmTasks('grunt-shell');
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
     if (target === 'dist') {
       return grunt.task.run(['build', 'connect:dist:keepalive']);
@@ -401,7 +407,8 @@ module.exports = function (grunt) {
     'uglify',
     'filerev',
     'usemin',
-    'htmlmin'
+    'htmlmin',
+    'shell'
   ]);
 
   grunt.registerTask('default', [
