@@ -1,3 +1,4 @@
+/* global app:true */
 'use strict';
 
 /**
@@ -8,7 +9,7 @@
  *
  * Main module of the application.
  */
-angular
+var app = angular
   .module('debtGroupApp', [
     'ngAnimate',
     'ngCookies',
@@ -17,8 +18,8 @@ angular
     'ngSanitize',
     'ngTouch',
     'firebase'
-  ])
-  .config(function ($routeProvider) {
+  ]);
+  app.config(function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -28,7 +29,17 @@ angular
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
       })
+      .when('/register', {
+        templateUrl: 'views/register.html',
+        controller: 'AuthCtrl'
+      })
+      .when('/login', {
+        templateUrl: 'views/login.html',
+        controller: 'AuthCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
   });
+
+app.constant('FIREBASE_URL', 'https://debtgroup.firebaseIO.com/');

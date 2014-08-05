@@ -358,7 +358,7 @@ module.exports = function (grunt) {
     },
 
     shell: {
-      firebase_deploy: {
+      firebaesDeploy: {
         command: 'firebase deploy'
       }
     }

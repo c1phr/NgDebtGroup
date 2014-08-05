@@ -7,7 +7,7 @@
  * # AboutCtrl
  * Controller of the debtGroupApp
  */
-angular.module('debtGroupApp')
+app
   .controller('AboutCtrl', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
