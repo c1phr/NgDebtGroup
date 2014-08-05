@@ -8,10 +8,11 @@
  * Controller of the debtGroupApp
  */
 
-app.controller('MainCtrl', function ($scope) {
+app.controller('MainCtrl', function ($scope, Auth) {
   $scope.awesomeThings = [
     'HTML5 Boilerplate',
     'AngularJS',
     'Karma'
   ];
+  $scope.Auth = Auth;
 });

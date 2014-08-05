@@ -14,10 +14,10 @@ app.factory('Auth',
                   return auth.user !== null;
                 },
                 login: function(user) {
-                  return auth.$login('password', user);
+                  return auth.login('password', user);
                 },
                 logout: function() {
-                  auth.$logout();
+                  auth.logout();
                 }
               };
               $rootScope.signedIn = function() {

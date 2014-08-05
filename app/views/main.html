@@ -1,10 +1,12 @@
-<div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
+<div class="jumbotron" ng-if="Auth.signedIn()">
+  <h1>Welcome!</h1>
   <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
+    Please sign-in to continue
   </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
+  <p>
+  <a class="btn btn-lg btn-success" ng-href="#/login">Login</a>
+  <a class="btn btn-lg btn-warning" ng-href="#/login">Register</a>
+  </p>
 </div>
 
 <div class="row marketing">
