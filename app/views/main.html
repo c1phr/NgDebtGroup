@@ -1,4 +1,7 @@
-<div class="jumbotron" ng-if="Auth.signedIn()">
+<div ng-init="init()"></div>
+
+
+<div class="jumbotron" ng-if="isAuthenticated()">
   <h1>Welcome!</h1>
   <p class="lead">
     Successfully signed in!
@@ -9,7 +12,7 @@
 </div>
 
 
-<div class="jumbotron" ng-if="!Auth.signedIn()">
+<div class="jumbotron" ng-if="!isAuthenticated()">
   <h1>Welcome!</h1>
   <p class="lead">
     Please sign-in to continue

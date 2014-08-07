@@ -1,7 +1,7 @@
 'use strict';
 
 app.factory('Auth',
-            function ($firebaseSimpleLogin, FIREBASE_URL, $rootScope, $location) {
+            function ($firebaseSimpleLogin, FIREBASE_URL, $rootScope) {
               var ref = new Firebase(FIREBASE_URL);
               var userAuth = null;
 
@@ -11,13 +11,9 @@ app.factory('Auth',
                 }
                 if (user) {
                   userAuth = user;
-                  console.log(userAuth);
-                  $location.path('/');
                 }
                 else {
                   $rootScope.user = null;
-                  console.log('No user logged in');
-                  $location.path('/');
                 }
               });
 
@@ -27,7 +23,7 @@ app.factory('Auth',
                 },
                 signedIn: function() {
                   console.log(userAuth);
-                  return userAuth !== null;
+                  return userAuth;
                 },
                 login: function(user) {
                   return authTool.login('password', user);
