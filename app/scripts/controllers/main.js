@@ -8,6 +8,12 @@
  * Controller of the debtGroupApp
  */
 
+app.factory('GetDebts', ['$firebase', function(FIREBASE_URL, $firebase) {
+  return function() {
+    var ref = new Firebase(FIREBASE_URL + 'debts');
+  };
+}]);
+
 app.controller('MainCtrl', function ($scope, $rootScope, FIREBASE_URL, $location) {
   var ref = new Firebase(FIREBASE_URL);
 
